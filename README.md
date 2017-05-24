@@ -3,6 +3,8 @@ Name
 
 lua-resty-ctxdump - stash and apply the ngx.ctx, avoiding being destoried after Nginx internal redirect happens.
 
+![Build Status](https://travis-ci.org/tokers/lua-resty-ctxdump.svg?branch=master)
+
 Table of Contents
 =================
 
