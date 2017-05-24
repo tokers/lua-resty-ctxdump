@@ -16,4 +16,4 @@ before_script:
 script:
     - sudo export PATH=/usr/local/openresty/nginx/sbin:$PATH
     - sudo cp lib/resty/ctxdump.lua /usr/local/openresty/lualib/resty/
-    - sudo prove -r t/
+    - sudo prove -I../test-nginx/lib -r t/
