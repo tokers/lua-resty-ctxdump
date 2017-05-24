@@ -1,4 +1,3 @@
-
 -- Copyright (C) UPYUN, Inc.
 
 local tonumber = tonumber
@@ -13,7 +12,7 @@ local function ref_in_table(tb, key)
     end
 
     local ref = tb[key]
-    if key and key > FREE_LIST_REF then
+    if ref and ref ~= FREE_LIST_REF then
         tb[FREE_LIST_REF] = tb[ref]
     else
         ref = #tb + 1
