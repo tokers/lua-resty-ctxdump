@@ -1,7 +1,9 @@
 language: perl
 perl:
     - 5.10
-
+cache:
+    - apt
+    - ccache
 env:
     - V_OPENRESTY=1.9.15.1
 install:

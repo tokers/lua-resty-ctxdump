@@ -14,4 +14,5 @@ install: all
 	$(INSTALL) lib/resty/*.lua $(DESTDIR)/$(LUA_LIB_DIR)/resty/
 
 test: all
+	sudo cp lib/resty/ctxdump.lua $(OPENRESTY_PREFIX)/lualib/resty
 	PATH=$(OPENRESTY_PREFIX)/nginx/sbin:$$PATH prove -I../test-nginx/lib -r t/
