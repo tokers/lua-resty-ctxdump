@@ -44,7 +44,7 @@ location /t2 {
              Date = "Wed May  3 15:18:04 CST 2017",
              Site = "unknown"
         }
-        ctxdump.apply_ngx_ctx(ngx.var.ctx_ref)
+        ngx.ctx = ctxdump.apply_ngx_ctx(ngx.var.ctx_ref)
         ngx.say("Date: " .. ngx.ctx["Date"] .. " Site: " .. ngx.ctx["Site"])
     }
 }
