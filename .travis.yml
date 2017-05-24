@@ -14,6 +14,6 @@ before_script:
     - tar xzf openresty-$V_OPENRESTY.tar.gz
     - cd openresty-$V_OPENRESTY && ./configure && make && sudo make install && cd ..
 script:
-    - export PATH=/usr/local/openresty/nginx/sbin:$PATH
-    - cp lib/resty/ctxdump.lua /usr/local/openresty/lualib/resty/
-    - prove -r t/
+    - sudo export PATH=/usr/local/openresty/nginx/sbin:$PATH
+    - sudo cp lib/resty/ctxdump.lua /usr/local/openresty/lualib/resty/
+    - sudo prove -r t/
