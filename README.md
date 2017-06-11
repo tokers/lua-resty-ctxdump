@@ -40,6 +40,7 @@ location /t1 {
 }
 
 location /t2 {
+    internal;
     content_by_lua_block {
          local ctxdump = require "resty.ctxdump"
          ngx.ctx = {
