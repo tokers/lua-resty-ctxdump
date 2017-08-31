@@ -1,7 +1,7 @@
 -- Copyright (C) UPYUN, Inc.
 
 local tonumber = tonumber
-local _M = { _VERSION = "0.01" }
+local _M = { _VERSION = "0.02" }
 local memo = {}
 local FREE_LIST_REF = 0
 
@@ -38,7 +38,7 @@ function _M.apply_ngx_ctx(ref)
 
     local old_ngx_ctx = memo[ref]
 
-    -- unreference
+    -- dereference
     memo[ref] = memo[FREE_LIST_REF]
     memo[FREE_LIST_REF] = ref
 
