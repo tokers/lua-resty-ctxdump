@@ -11,7 +11,7 @@ local function ref_in_table(tb, key)
         return -1
     end
 
-    local ref = tb[key]
+    local ref = tb[FREE_LIST_REF]
     if ref and ref ~= FREE_LIST_REF then
         tb[FREE_LIST_REF] = tb[ref]
     else
