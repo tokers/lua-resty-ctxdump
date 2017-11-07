@@ -6,7 +6,7 @@ run_tests();
 
 __DATA__
 
-=== TEST 1: stash and apply the old ngx.ctx
+=== TEST 1: memo will be swell.
 
 --- config
 
@@ -29,9 +29,8 @@ location = /t2 {
     content_by_lua_block {
         local ctxdump = require "resty.ctxdump"
         ngx.ctx = ctxdump.apply_ngx_ctx(ngx.var.ctx_ref)
+        ngx.say("ref is ", ngx.var.ctx_ref)
         ngx.var.ctx_ref = ""
-        ngx.say("today ", ngx.ctx["today"], " launch ", ngx.ctx["launch"],
-                  " drink ", ngx.ctx["drink"])
     }
 }
 
@@ -41,4 +40,12 @@ GET /t1
 --- error_code: 200
 
 --- response_body
-today wednesday launch steak drink wine
+ref is 1
+
+--- request
+GET /t1
+
+--- error_code: 200
+
+--- response_body
+ref is 1
