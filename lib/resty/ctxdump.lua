@@ -1,7 +1,8 @@
 -- Copyright (C) UPYUN, Inc.
+-- Copyright (C) Alex Zhang
 
 local tonumber = tonumber
-local _M = { _VERSION = "0.02" }
+local _M = { _VERSION = "0.03" }
 local memo = {}
 local FREE_LIST_REF = 0
 

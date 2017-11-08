@@ -14,6 +14,7 @@ Table of Contents
 * [Methods](#methods)
     * [stash_ngx_ctx](#stash_ngx_ctx)
     * [apply_ngx_ctx](#apply_ngx_ctx)
+* [Author](#author)
 * [Copyright and License](#copyright-and-license)
 
 Status
@@ -80,6 +81,12 @@ apply_ngx_ctx
 fetch the old `ngx.ctx` with the anchor returns from `stash_ngx_ctx `. After that, the anchor will be out of work.
 
 Note: `stash_ngx_ctx` and `apply_ngx_ctx ` must be called in pairs, otherwise memory leak will happen! See [stash_ngx_ctx](#stash_ngx_ctx).
+
+
+Author
+======
+
+Alex Zhang(张超) zchao1995@gmail.com, UPYUN Inc.
 
 
 Copyright and License
