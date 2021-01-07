@@ -87,7 +87,7 @@ Note: `stash_ngx_ctx` and `apply_ngx_ctx ` must be called in pairs, otherwise me
 Author
 ======
 
-Alex Zhang(张超) zchao1995@gmail.com, UPYUN Inc.
+Alex Zhang(张超) tokers@apache.org, @api7.ai.
 
 
 Copyright and License
@@ -95,7 +95,7 @@ Copyright and License
 
 The bundle itself is licensed under the 2-clause BSD license.
 
-Copyright (c) 2017-2018, Alex Zhang.
+Copyright (c) 2017-2021, Alex Zhang.
 
 This module is licensed under the terms of the BSD license.
 
