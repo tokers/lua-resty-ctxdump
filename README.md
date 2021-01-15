@@ -29,12 +29,12 @@ Synopsis
 ```lua
 
 location /t1 {
-    set $ctx_ref = "";
+    set $ctx_ref "";
     content_by_lua_block {
-         local ctxdump = require "resty.ctxdump"
-         ngx.ctx = {
-             Date = "Wed May  3 15:18:04 CST 2017",
-             Site = "unknown"
+        local ctxdump = require "resty.ctxdump"
+        ngx.ctx = {
+            Date = "Wed May  3 15:18:04 CST 2017",
+            Site = "unknown"
         }
         ngx.var.ctx_ref = ctxdump.stash_ngx_ctx()
         ngx.exec("/t2")
@@ -44,11 +44,7 @@ location /t1 {
 location /t2 {
     internal;
     content_by_lua_block {
-         local ctxdump = require "resty.ctxdump"
-         ngx.ctx = {
-             Date = "Wed May  3 15:18:04 CST 2017",
-             Site = "unknown"
-        }
+        local ctxdump = require "resty.ctxdump"
         ngx.ctx = ctxdump.apply_ngx_ctx(ngx.var.ctx_ref)
         ngx.say("Date: " .. ngx.ctx["Date"] .. " Site: " .. ngx.ctx["Site"])
     }
